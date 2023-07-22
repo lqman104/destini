@@ -1,6 +1,7 @@
 import 'package:destini/story.dart';
 
 class StoryBrain {
+  int _storyIndex = 0;
   List<Story> _storyData = [
     Story(
         'Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: "Need a ride, boy?".',
@@ -28,16 +29,20 @@ class StoryBrain {
         '')
   ];
 
-  String getStory(int storyIndex) {
-    return _storyData[storyIndex].storyTitle;
+  String getStory() {
+    return _storyData[_storyIndex].storyTitle;
+  }
+
+  String getChoice1() {
+    return _storyData[_storyIndex].choice1;
+  }
+
+  String getChoice2() {
+    return _storyData[_storyIndex].choice2;
   }
 }
 
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
-
-//TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
-
-//TODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
